@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Chúc mừng 20/10</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌸 Chúc Mừng 20/10 🌸</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>💐 Chúc mừng 20/10 💐</h1>
-  <p>Chúc các chị em luôn xinh đẹp, hạnh phúc và tràn đầy năng lượng!</p>
-  <button onclick="chuc()">Nhấn để nhận quà 🎁</button>
+  <audio id="bg-music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/02/03/audio_d949bfa6b2.mp3?filename=sweet-love-139746.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="intro-screen" id="intro">
+    <h1>🌷 20/10 🌷</h1>
+    <p>Dành tặng tất cả những người phụ nữ xinh đẹp, mạnh mẽ và tuyệt vời nhất thế gian...</p>
+    <button id="startBtn">Bắt đầu hành trình yêu thương 💖</button>
+  </div>
+
+  <div class="main-screen" id="main" style="display:none;">
+    <canvas id="fireworks"></canvas>
+    <div class="heart-container" id="hearts"></div>
+
+    <div class="content">
+      <h2 class="fade-in">💐 Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 💐</h2>
+      <p class="typewriter" id="wishText"></p>
+      <button id="toggleMusic">🔊 Bật/Tắt Nhạc</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
