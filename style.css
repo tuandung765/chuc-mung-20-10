@@ -1,0 +1,31 @@
+body {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  text-align: center;
+  color: #fff;
+  font-family: sans-serif;
+  padding-top: 100px;
+}
+
+h1 {
+  font-size: 60px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff; }
+  to   { text-shadow: 0 0 30px #ff69b4; }
+}
+
+button {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff4081;
+}
