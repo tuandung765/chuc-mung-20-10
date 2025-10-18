@@ -1,33 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌸 Chúc Mừng 20/10 🌸</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thiệp 20/10 — Lãng mạn • Hiện đại • Cổ tích</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <audio id="bg-music" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2023/02/03/audio_d949bfa6b2.mp3?filename=sweet-love-139746.mp3" type="audio/mpeg" />
-  </audio>
-
-  <div class="intro-screen" id="intro">
-    <h1>🌷 20/10 🌷</h1>
-    <p>Dành tặng tất cả những người phụ nữ xinh đẹp, mạnh mẽ và tuyệt vời nhất thế gian...</p>
-    <button id="startBtn">Bắt đầu hành trình yêu thương 💖</button>
+  <!-- Controls -->
+  <div id="controls">
+    <button id="start-btn" class="ctrl btn">Bắt đầu</button>
+    <button id="music-toggle" class="ctrl btn">🔈 Nhạc</button>
+    <button id="share-btn" class="ctrl btn">🔗 Chia sẻ</button>
+    <label class="ctrl reduce">
+      <input id="reduce-motion" type="checkbox"><span>Giảm chuyển động</span>
+    </label>
   </div>
 
-  <div class="main-screen" id="main" style="display:none;">
-    <canvas id="fireworks"></canvas>
-    <div class="heart-container" id="hearts"></div>
-
-    <div class="content">
-      <h2 class="fade-in">💐 Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 💐</h2>
-      <p class="typewriter" id="wishText"></p>
-      <button id="toggleMusic">🔊 Bật/Tắt Nhạc</button>
+  <!-- Intro (màn chào cinematic) -->
+  <div id="intro" class="screen">
+    <div class="intro-card">
+      <svg class="logo" viewBox="0 0 64 64" width="96" height="96" aria-hidden>
+        <path d="M32 52s-18-10-18-24a18 18 0 0 1 36 0c0 14-18 24-18 24z" fill="none" stroke="#fff" stroke-width="2"></path>
+      </svg>
+      <h1>Chúc mừng Ngày Phụ Nữ 20/10</h1>
+      <p class="muted">Một tấm thiệp động — bấm "Bắt đầu" để xem</p>
+      <button id="intro-start" class="btn primary">Bắt đầu · Vào thiệp</button>
     </div>
   </div>
 
+  <!-- App (ẩn trước khi nhấn Start) -->
+  <main id="app" class="hidden" aria-live="polite">
+    <!-- Background layers -->
+    <div id="gradient-bg" class="layer"></div>
+    <div id="starfield" class="layer"></div>
+    <div id="bokeh" class="layer"></div>
+
+    <!-- Effects containers -->
+    <div id="confetti-container" class="layer"></div>
+    <div id="hearts-layer" class="layer"></div>
+    <div id="butterfly-layer" class="layer"></div>
+
+    <!-- Center card (glass) -->
+    <section class="card" role="region" aria-label="Thiệp 20 tháng 10">
+      <div class="card-left">
+        <h2 class="pam">💐 Chúc mừng 20/10</h2>
+        <h3 class="headline">Gửi tới những người phụ nữ tuyệt vời — hoa, nắng và yêu thương</h3>
+        <p id="typewriter" class="typewriter" aria-live="polite"></p>
+
+        <div class="actions">
+          <button id="send-hearts" class="btn accent">Gửi trái tim</button>
+          <button id="launch-fire" class="btn accent">Pháo hoa</button>
+          <button id="download-card" class="btn ghost">Tải thiệp (HTML)</button>
+        </div>
+      </div>
+
+      <div class="card-right">
+        <div id="stage" class="stage" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Made with ❤️ — chỉnh ảnh/nhạc trong `sampleImages` và `bgAudio`</small>
+    </footer>
+  </main>
+
+  <!-- Audio (free source example) -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2023/02/03/audio_d949bfa6b2.mp3?filename=sweet-love-139746.mp3" type="audio/mpeg">
+    <!-- If you want, replace with your own mp3 in same folder -->
+  </audio>
+
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
